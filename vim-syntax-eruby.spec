@@ -29,7 +29,7 @@ install %{SOURCE0} eruby.vim
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT%{_vimdatadir}/{syntax,plugin,ftplugin,ftdetect}
+install -d $RPM_BUILD_ROOT%{_vimdatadir}/{syntax,ftdetect}
 install eruby.vim $RPM_BUILD_ROOT%{_vimdatadir}/syntax
 
 cat > $RPM_BUILD_ROOT%{_vimdatadir}/ftdetect/%{name}.vim <<-EOF
