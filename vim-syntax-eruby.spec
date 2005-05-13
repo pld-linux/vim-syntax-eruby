@@ -1,7 +1,8 @@
 
 %define		_vimdatadir	%{_datadir}/vim/vimfiles
 
-Summary:	Vim syntax: Highlight eruby code blocks within html
+Summary:	Vim syntax: Highlight eruby code blocks within HTML
+Summary(pl):	Opis sk³adni dla Vima: pod¶wietlanie bloków kodu eruby wewn±trz HTML-a
 Name:		vim-syntax-eruby
 Version:	2.0
 Release:	0.2
@@ -18,8 +19,12 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This script properly highlights <% ... %>, <%=...%>, and <%#...%> as
-ruby code within html.
+This script properly highlights <%...%>, <%=...%>, and <%#...%> as
+ruby code within HTML.
+
+%description -l pl
+Ten skrypt w³a¶ciwie pod¶wietla <%...%>, <%=...%> i <%#...%> jako kod
+w jêzyku ruby wewn±trz HTML-a.
 
 %prep
 %setup -q -c -T
