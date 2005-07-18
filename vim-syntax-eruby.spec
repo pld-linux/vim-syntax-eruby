@@ -5,7 +5,7 @@ Summary:	Vim syntax: Highlight eruby code blocks within HTML
 Summary(pl):	Opis sk³adni dla Vima: pod¶wietlanie bloków kodu eruby wewn±trz HTML-a
 Name:		vim-syntax-eruby
 Version:	2.0
-Release:	0.2
+Release:	1
 # dunno, can't find license information.
 License:	as-is
 Group:		Applications/Editors/Vim
@@ -18,6 +18,8 @@ Requires:	vim >= 4:6.3.058-3
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		_syntax eruby
+
 %description
 This script properly highlights <%...%>, <%=...%>, and <%#...%> as
 ruby code within HTML.
@@ -28,17 +30,17 @@ w jêzyku ruby wewn±trz HTML-a.
 
 %prep
 %setup -q -c -T
-install %{SOURCE0} eruby.vim
+install %{SOURCE0} %{_syntax}.vim
 %patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT%{_vimdatadir}/{syntax,ftdetect}
-install eruby.vim $RPM_BUILD_ROOT%{_vimdatadir}/syntax
+install %{_syntax}.vim $RPM_BUILD_ROOT%{_vimdatadir}/syntax
 
-cat > $RPM_BUILD_ROOT%{_vimdatadir}/ftdetect/%{name}.vim <<-EOF
-au BufNewFile,BufRead *.rhtml	setfiletype eruby
+cat > $RPM_BUILD_ROOT%{_vimdatadir}/ftdetect/%{_syntax}.vim <<-EOF
+au BufNewFile,BufRead *.rhtml	set filetype=%{_syntax}
 EOF
 
 %clean
