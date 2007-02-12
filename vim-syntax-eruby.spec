@@ -2,7 +2,7 @@
 %define		_vimdatadir	%{_datadir}/vim/vimfiles
 
 Summary:	Vim syntax: Highlight eruby code blocks within HTML
-Summary(pl.UTF-8):   Opis składni dla Vima: podświetlanie bloków kodu eruby wewnątrz HTML-a
+Summary(pl.UTF-8):	Opis składni dla Vima: podświetlanie bloków kodu eruby wewnątrz HTML-a
 Name:		vim-syntax-eruby
 Version:	2.0
 Release:	1
