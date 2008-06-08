@@ -1,6 +1,3 @@
-
-%define		_vimdatadir	%{_datadir}/vim/vimfiles
-
 Summary:	Vim syntax: Highlight eruby code blocks within HTML
 Summary(pl.UTF-8):	Opis składni dla Vima: podświetlanie bloków kodu eruby wewnątrz HTML-a
 Name:		vim-syntax-eruby
@@ -14,11 +11,12 @@ Source0:	http://vim.sourceforge.net/scripts/download_script.php?src_id=1505
 Patch0:		%{name}-delimiter.patch
 URL:		http://vim.sourceforge.net/scripts/script.php?script_id=403
 # for _vimdatadir existence
-Requires:	vim >= 4:6.3.058-3
+Requires:	vim-rt >= 4:6.3.058-3
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_syntax eruby
+%define		_vimdatadir	%{_datadir}/vim/vimfiles
 
 %description
 This script properly highlights <%...%>, <%=...%>, and <%#...%> as
